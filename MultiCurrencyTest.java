@@ -7,7 +7,7 @@ public class MultiCurrencyTest {
 
 	@Test
 	public void testMultiplication() {
-		Money five = new Dollar(5);
+		Dollar five = new Dollar(5);
 		assertEquals(new Dollar(10), five.times(2));
 		assertEquals(new Dollar(15), five.times(3));
 	}
@@ -23,7 +23,7 @@ public class MultiCurrencyTest {
 	
 	@Test
 	public void testFrancMultiplication() {
-		Money five = new Franc(5);
+		Franc five = new Franc(5);
 		assertEquals(new Franc(10), five.times(2));
 		assertEquals(new Franc(15), five.times(3));
 	}

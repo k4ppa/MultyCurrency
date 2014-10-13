@@ -6,10 +6,6 @@ public class Money {
 		this.amount = amount;
 	}
 
-	public Money times(int multiplier) {
-		return new Money(amount * multiplier);
-	}
-
 	public boolean equals(Object object) {
 		Money money = (Money) object;
 		return this.getClass().equals(money.getClass()) && this.amount == money.amount;
