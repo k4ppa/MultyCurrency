@@ -14,4 +14,8 @@ public class MultiCurrencyTest {
 		assertEquals(15, product.amount);
 	}
 
+	@Test
+	public void testEquality() throws Exception {
+		assertTrue(new Dollar(5).equals(new Dollar(5)));
+	}
 }
