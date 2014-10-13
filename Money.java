@@ -1,4 +1,5 @@
-public class Money {
+
+public abstract class Money {
 
 	protected int amount;
 
@@ -10,5 +11,11 @@ public class Money {
 		Money money = (Money) object;
 		return this.getClass().equals(money.getClass()) && this.amount == money.amount;
 	}
+
+	public static Money Dollar(int amount) {
+		return new Dollar(amount);
+	}
+	
+	public abstract Money times(int multiplier);
 
 }
