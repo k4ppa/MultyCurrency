@@ -8,23 +8,23 @@ public class MultiCurrencyTest {
 	@Test
 	public void testMultiplication() {
 		Money five = Money.Dollar(5);
-		assertEquals(new Dollar(10), five.times(2));
-		assertEquals(new Dollar(15), five.times(3));
+		assertEquals(Money.Dollar(10), five.times(2));
+		assertEquals(Money.Dollar(15), five.times(3));
 	}
 
 	@Test
 	public void testEquality() throws Exception {
-		assertTrue(new Dollar(5).equals(new Dollar(5)));
-		assertFalse(new Dollar(5).equals(new Dollar(6)));
-		assertTrue(new Franc(5).equals(new Franc(5)));
-		assertFalse(new Franc(5).equals(new Franc(6)));
-		assertFalse(new Franc(5).equals(new Dollar(5)));
+		assertTrue(Money.Dollar(5).equals(Money.Dollar(5)));
+		assertFalse(Money.Dollar(5).equals(Money.Dollar(6)));
+		assertTrue(Money.Franc(5).equals(Money.Franc(5)));
+		assertFalse(Money.Franc(5).equals(Money.Franc(6)));
+		assertFalse(Money.Franc(5).equals(Money.Dollar(5)));
 	}
 	
 	@Test
 	public void testFrancMultiplication() {
-		Franc five = new Franc(5);
-		assertEquals(new Franc(10), five.times(2));
-		assertEquals(new Franc(15), five.times(3));
+		Money five = new Franc(5);
+		assertEquals(Money.Franc(10), five.times(2));
+		assertEquals(Money.Franc(15), five.times(3));
 	}
 }
