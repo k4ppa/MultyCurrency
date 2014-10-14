@@ -24,4 +24,15 @@ public class MultiCurrencyTest {
 		assertEquals("USD", Money.Dollar(1).currency());
 		assertEquals("CHF", Money.Franc(1).currency());
 	}
+	
+	@Test
+	public void testSimpleAddition() throws Exception {
+		Money five = Money.Dollar(5);
+		Expression sum = five.plus(five);
+		Bank bank = new Bank();
+		Money reduced = bank.reduce(sum, "USD");
+		assertEquals(Money.Dollar(10), reduced);
+	}
 }
+
+
