@@ -23,8 +23,14 @@ public class MultiCurrencyTest {
 	
 	@Test
 	public void testFrancMultiplication() {
-		Money five = new Franc(5);
+		Money five = Money.Franc(5);
 		assertEquals(Money.Franc(10), five.times(2));
 		assertEquals(Money.Franc(15), five.times(3));
+	}
+	
+	@Test
+	public void testCurrency() throws Exception {
+		assertEquals("USD", Money.Dollar(1).currency());
+		assertEquals("CHF", Money.Franc(1).currency());
 	}
 }
