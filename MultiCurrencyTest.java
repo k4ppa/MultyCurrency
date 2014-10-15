@@ -35,7 +35,7 @@ public class MultiCurrencyTest {
 	}
 	
 	@Test
-	public void testPlusReturnsSum() throws Exception {
+	public void testPlusReturnSum() throws Exception {
 		Money five = Money.Dollar(5);
 		Expression result = five.plus(five);
 		Sum sum = (Sum) result;
@@ -49,6 +49,13 @@ public class MultiCurrencyTest {
 		Bank bank = new Bank();
 		Money result = bank.reduce(sum, "USD");
 		assertEquals(Money.Dollar(7), result);
+	}
+	
+	@Test
+	public void testReduceMoney() throws Exception {
+		Bank bank = new Bank();
+		Money result = bank.reduce(Money.Dollar(1), "USD");
+		assertEquals(Money.Dollar(1), result);
 	}
 }
 
