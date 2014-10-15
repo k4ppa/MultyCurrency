@@ -65,6 +65,11 @@ public class MultiCurrencyTest {
 		Money result = bank.reduce(Money.Franc(2), "USD");
 		assertEquals(Money.Dollar(1), result);
 	}
+	
+	@Test
+	public void testArrayEquals() throws Exception {
+		assertArrayEquals(new Object[] {"abc"}, new Object[] {"abc"});
+	}
 }
 
 
