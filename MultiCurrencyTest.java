@@ -70,6 +70,11 @@ public class MultiCurrencyTest {
 	public void testArrayEquals() throws Exception {
 		assertArrayEquals(new Object[] {"abc"}, new Object[] {"abc"});
 	}
+	
+	@Test
+	public void testIdentityRate() throws Exception {
+		assertEquals(1, new Bank().rate("USD", "USD"));
+	}
 }
 
 
