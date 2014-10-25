@@ -75,6 +75,16 @@ public class MultiCurrencyTest {
 	public void testIdentityRate() throws Exception {
 		assertEquals(1, new Bank().rate("USD", "USD"));
 	}
+	
+	@Test
+	public void testMixedAddiction() throws Exception {
+		Money fiveBucks = Money.Dollar(5);
+		Money tenFrancs = Money.Franc(10);
+		Bank bank = new Bank();
+		bank.addRate("CHF", "USD", 2);
+		Money result = bank.reduce(fiveBucks.plus(tenFrancs), "USD");
+		assertEquals(Money.Dollar(10), result);
+	}
 }
 
 
