@@ -78,8 +78,8 @@ public class MultiCurrencyTest {
 	
 	@Test
 	public void testMixedAddiction() throws Exception {
-		Money fiveBucks = Money.Dollar(5);
-		Money tenFrancs = Money.Franc(10);
+		Expression fiveBucks = Money.Dollar(5);
+		Expression tenFrancs = Money.Franc(10);
 		Bank bank = new Bank();
 		bank.addRate("CHF", "USD", 2);
 		Money result = bank.reduce(fiveBucks.plus(tenFrancs), "USD");
