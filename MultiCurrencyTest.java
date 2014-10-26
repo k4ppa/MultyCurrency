@@ -95,7 +95,17 @@ public class MultiCurrencyTest {
         Expression sum = new Sum(fiveBucks, tenFrancs).plus(fiveBucks);
         Money result = sum.reduce(bank, "USD");
         assertEquals(Money.Dollar(15), result);
+    }
 
+    @Test
+    public void testSumTimes() {
+        Expression fiveBucks = Money.Dollar(5);
+        Expression tenFrancs = Money.Franc(10);
+        Bank bank = new Bank();
+        bank.addRate("CHF", "USD", 2);
+        Expression sum = new Sum(fiveBucks, tenFrancs).times(2);
+        Money result = sum.reduce(bank, "USD");
+        assertEquals(Money.Dollar(20), result);
     }
 }
 
